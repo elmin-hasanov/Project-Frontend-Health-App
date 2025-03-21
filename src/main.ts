@@ -59,18 +59,18 @@ document.getElementById("calculate")?.addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const featuresSection = document.querySelector(".features");
+  const Section = document.querySelector(".features") as HTMLElement;
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          featuresSection.classList.add("visible");
+          Section.classList.add("visible");
         }
       });
     },
     { threshold: 0.3 }
   );
 
-  observer.observe(featuresSection);
+  observer.observe(Section);
 });
